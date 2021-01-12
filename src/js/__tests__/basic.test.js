@@ -1,4 +1,6 @@
-import Character from '../basic';
+import Character, {
+  Bowerman, Swordsman, Magician, Daemon, Undead, Zombie,
+} from '../basic';
 
 test('name not string', () => {
   const t = () => {
@@ -51,15 +53,37 @@ test('type exist', () => {
   }
 });
 
-test('type exist', () => {
-  try {
-    const q = new Character('Mona', 'Bowerman');
-  } catch (e) {
-    expect(e.message).toBe('Тип отсутствует');
-  }
-});
-
 test('get type', () => {
   const a = new Character('Boma', 'Swordsman');
   expect(a.type).toBe('Swordsman');
+});
+
+test('create Bowerman', () => {
+  const a = new Bowerman('Boma', 'Bowerman');
+  expect(a.attack).toBe(25);
+});
+
+test('create Swordsman ', () => {
+  const a = new Swordsman('Boma', 'Swordsman');
+  expect(a.attack).toBe(40);
+});
+
+test('create Magician', () => {
+  const a = new Magician('Boma', 'Magician');
+  expect(a.attack).toBe(10);
+});
+
+test('create Daemon', () => {
+  const a = new Daemon('Boma', 'Daemon');
+  expect(a.attack).toBe(10);
+});
+
+test('create Undead', () => {
+  const a = new Undead('Boma', 'Undead');
+  expect(a.attack).toBe(25);
+});
+
+test('create Zombie', () => {
+  const a = new Zombie('Boma', 'Zombie');
+  expect(a.attack).toBe(40);
 });
